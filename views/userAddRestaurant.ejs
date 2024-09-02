@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add restaurants</title>
+    <link rel="stylesheet" href="/indexPage/css/style.css">
+</head>
+<body>
+    <div id="bigHeader">
+        <img src="/indexPage/img/p1.png" alt="">
+    </div>
+    <div id="simpleImg">
+        <div id="subImg">
+            <div id="subImg1">
+                <div id="subImgPic">
+                    <img src="/indexPage/img/p2.png" alt="">
+                </div>
+                <div id="subImgWrite">
+                    <h1>Order Online</h1>
+                    <p>Stay home and order to your doorstep</p>
+                </div>
+            </div>
+            <div id="subImg1">
+                <div id="subImgPic">
+                    <img src="/indexPage/img/p3.png" alt="">
+                </div>
+                <div id="subImgWrite">
+                    <h1>Dining</h1>
+                    <p>View the city's favourite dining venues</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="add" style="width: 100%;height: 500px;display: flex;justify-content: center;">
+        <div id="addSub" style="width: 80%;height: 100%;display: flex;flex-direction: column;justify-content: space-evenly;align-items: center;">
+            <h1 style="text-align: center;font-size: 40px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-style: oblique;color: red;">Request For Add Restaurant on Zomato</h1>
+            <form method="post" action="userAddResPost" enctype="multipart/form-data" style="width: 40%;height: 80%;display: flex;flex-direction: column;justify-content: space-evenly;align-items: center;">
+                <input type="text" style="width: 80%;height: 40px;text-align: center;" placeholder="Enter City Name" name="cityname">
+                <input type="text" style="width: 80%;height: 40px;text-align: center;" placeholder="Enter Hotel & Restaurant Name" name="hotelname">
+                <input type="text" style="width: 80%;height: 40px;text-align: center;" placeholder="Enter Address" name="address">
+                <input type="text" style="width: 80%;height: 40px;text-align: center;" placeholder="Enter Mobile Number" name="number">
+                <select name="userCategory" id="" style="width: 80%;height: 40px;text-align: center;">
+                    <option value="">Select Category</option>
+                    <option value="Hotel">Hotel</option>
+                    <option value="Restaurant">Restaurant</option>
+                </select>
+                <label for="" style="width: 80%;height: 40px;text-align: center;">Add Image</label>
+                <input type="file" name="image" style="width: 80%;height: 40px;">
+                <button style="width: 150px;height: 40px;border-radius: 10px;border: none;background-color: dodgerblue;color: white;font-weight: bold;">Send Request</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <%-include('indexFooter')-%>
+    </footer>
+</body>
+</html>

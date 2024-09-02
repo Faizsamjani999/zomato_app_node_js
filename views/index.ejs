@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Application</title>
+    <link rel="stylesheet" href="/indexPage/css/style.css">
+</head>
+<body>
+    <%-include('indexHeader')-%>
+    <div id="bigHeader">
+        <img src="/indexPage/img/p1.png" alt="">
+    </div>
+    <div id="simpleImg">
+        <div id="subImg">
+            <div id="subImg1">
+                <div id="subImgPic">
+                    <img src="/indexPage/img/p2.png" alt="">
+                </div>
+                <div id="subImgWrite">
+                    <h1>Order Online</h1>
+                    <p>Stay home and order to your doorstep</p>
+                </div>
+            </div>
+            <div id="subImg1">
+                <div id="subImgPic">
+                    <img src="/indexPage/img/p3.png" alt="">
+                </div>
+                <div id="subImgWrite">
+                    <h1>Dining</h1>
+                    <p>View the city's favourite dining venues</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="collection">
+        <div id="collect1">
+            <h1>Collections</h1>
+            <div id="collectWrite">
+                <p>Explore curated lists of top restaurants, cafes, pubs, and bars in Rajkot, based on trends</p>
+                <a href="">All Collection in</a>
+            </div>
+        </div>
+        <div id="collectImg">
+            <div id="collectImg1" style="background-image: url(/indexPage/img/item2.webp);">
+                <h1>Best Pizza Placed in Town</h1>
+                <p>5 Places</p>
+            </div>
+            <div id="collectImg1" style="background-image: url(/indexPage/img/item1.jpg);">
+                <h1>Best Pizza Placed in Town</h1>
+                <p>5 Places</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="cityAdded">
+        <div id="subCityAdded">
+            <h1>Zomato Services Available Cityies</h1>
+            <div id="subCityEjs">
+                <%data.map((val)=>{%>
+                    <div id="cityBox">
+                        <p style="font-weight: bold;font-size: 20px;text-align: center;">Zomato only on</p>
+                        <h1 style="color: green;"><%=val.cityname%></h1>
+                    </div>
+                <%})%>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="download">
+        <div id="downloadSub">
+            <div id="download1">
+                <img src="/indexPage/img/p4.png" alt="">
+            </div>
+            <div id="download1">
+                <img src="/indexPage/img/p5.png" alt="">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <%-include('indexFooter')-%>
+    </footer>
+</body>
+</html>

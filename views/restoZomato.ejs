@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Restaurants</title>
+    <style>
+        #simpleImg{
+            width: 100%;
+            height: 500px;
+            /* border: 1px solid black; */
+            
+        }
+        #subImg{
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #write{
+            width: 100%;
+            height: 200px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+        }
+        #subWrite{
+            width: 90%;
+            height: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #subWrite h1{
+            font-size: 50px;
+            font-weight: bold;
+            color: purple;
+            font-style: italic;
+            font-variant: small-caps;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            letter-spacing: 5px;
+        }
+        #result{
+            width: 100%;
+            height: auto;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+        }
+        #resultSub{
+            width: 80%;
+            height: 100%;
+            /* border: 1px solid black; */
+        }
+        #db{
+            width: 100%;
+            height: 100%;
+            border: 3px solid rgb(11, 237, 94);
+            margin-top: 50px;
+            box-shadow: 5px 10px 5px rgb(222, 151, 9);
+        }
+        #dbImage{
+            width: 100%;
+            height: 400px;
+            /* border: 1px solid blue; */
+            display: flex;
+            justify-content: center;
+        }
+        #dbImage img{
+            width: 70%;
+            height: 100%;
+        }
+        #dbWrite{
+            width: 100%;
+            height: auto;
+            /* border: 1px solid green; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="bigHeader">
+        <img src="/indexPage/img/p1.png" alt="">
+    </div>
+    <div id="simpleImg">
+        <div id="subImg">
+            <div id="subImg1">
+                <div id="subImgPic">
+                    <img src="/indexPage/img/p2.png" alt="">
+                </div>
+                <div id="subImgWrite">
+                    <h1>Order Online</h1>
+                    <p>Stay home and order to your doorstep</p>
+                </div>
+            </div>
+            <div id="subImg1">
+                <div id="subImgPic">
+                    <img src="/indexPage/img/p3.png" alt="">
+                </div>
+                <div id="subImgWrite">
+                    <h1>Dining</h1>
+                    <p>View the city's favourite dining venues</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="write">
+        <div id="subWrite">
+            <h1>ZOMATO RESTAURANTS & HOTELS</h1>
+        </div>
+    </div>
+    <div id="result">
+        <div id="resultSub">
+            <%data.map((val)=>{%>
+                <div id="db">
+                    <div id="dbImage">
+                        <img src="<%=val.image%>" alt="">
+                    </div>
+                    <div id="dbWrite">
+                        <h1 style="font-size: 80px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-weight: 200;font-style: italic;font-variant: small-caps;word-spacing: 10px;letter-spacing: 20px;color: rgb(235, 27, 61);"><%=val.hotelname%></h1>
+                        <h1><%=val.address%></h1>
+                        <h1 style="font-size: 80px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-weight: 200;font-style: italic;font-variant: small-caps;word-spacing: 10px;letter-spacing: 20px;color: dodgerblue;"><%=val.citynameId.cityname%></h1>
+                        <h1>Mobile Number -: <span><%=val.number%></span></h1>
+                        <h1><%=val.category%></h1>
+                    </div>
+                </div>
+            <%})%>
+        </div>
+    </div>
+    <footer>
+        <%-include('indexFooter')-%>
+    </footer>
+</body>
+</html>
