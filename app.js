@@ -5,6 +5,7 @@ const path = require('path');
 const database = require('./config/database');
 const userSchema = require('./model/userRegister');
 const cityAdded = require('./model/addCity');
+const connection = require('./config/database');
 
 app.use(express.urlencoded());
 
@@ -19,4 +20,5 @@ app.use(require('./routes/route'));
 
 app.listen(port,()=>{
     console.log("Server Started At -" + port);
+    connection();
 })

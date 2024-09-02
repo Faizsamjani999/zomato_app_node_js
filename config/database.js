@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
+require("dotenv").config()
 
-mongoose.connect("mongodb://127.0.0.1/Zomato-App");
+const connection = ()=>{
+    mongoose.connect(process.env.MONGO_URI)
+    console.log("Database Connected");
+}
 
-const db = mongoose.connection;
-
-db.on("connected",()=>{
-    console.log("MongoDB Connected...");
-})
-
-module.exports = db;
+module.exports = connection
